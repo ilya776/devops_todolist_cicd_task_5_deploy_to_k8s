@@ -5,22 +5,22 @@ todoapp:
 
   resources:
     requests:
-      memory: "256Mi"
-      cpu: "150m"
+      memory: "128Mi"
+      cpu: "100m"
     limits:
       memory: "256Mi"
-      cpu: "150m"
+      cpu: "200m"
 
   hpa:
-    minReplicas: 2
-    maxReplicas: 5
+    minReplicas: 1
+    maxReplicas: 3
     cpu:
-      avarageUtilization: 70
+      avarageUtilization: 80
     memory:
-      avarageUtilization: 70
+      avarageUtilization: 80
 
   volumes:
     persistentVolume:
-      capacity: "1Gi"
+      capacity: "500Mi"
     persistentVolumeClaim:
-      requestStorage: "1Gi"
+      requestStorage: "500Mi"
